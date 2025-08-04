@@ -1,0 +1,46 @@
+version: '4.1'
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: dockerfile.dev
+    ports:
+      - 8000:8000
+      - 5678:5678
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - .:/app
+    environment:
+      DJANGO_SETTINGS_MODULE: ri_project.settings
+
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: data_main
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./containers/data:/var/lib/postgresql/data
+      - ./containers/back:/docker-entrypoint-initdb.d
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    restart: always
+    
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: myemail@example.com
+      PGADMIN_DEFAULT_PASSWORD: mypgadminpassword
+    ports:
+      - "5050:80"

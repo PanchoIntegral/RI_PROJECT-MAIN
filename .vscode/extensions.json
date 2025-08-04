@@ -1,0 +1,20 @@
+{
+    "recommendations": [
+        "enkia.tokyo-night",
+        "aaron-bond.better-comments",
+        "batisteo.vscode-django",
+        "usernamehw.errorlens",
+        "oderwat.indent-rainbow",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "PKief.material-icon-theme",
+        "PKief.material-product-icons",
+        "Postman.postman-for-vscode",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "donjayamanne.python-environment-manager",
+        "KevinRose.vsc-python-indent",
+        "mgesbert.python-path",
+        "qwtel.sqlite-viewer",
+        "TabNine.tabnine-vscode",
+    ]
+}

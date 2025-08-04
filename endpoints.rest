@@ -1,0 +1,1349 @@
+### Login Request
+POST http://localhost:8000/api/login/
+###
+GET http://localhost:8000/api/rh/empleados/1 HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+GET  http://localhost:8000/api/Nomina/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+GET http://localhost:8000/api/Nomina/totales-semana-actual HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+GET http://localhost:8000/api/Nomina/semana-actual HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/
+
+###
+PATCH http://localhost:8000/api/Nomina/2/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    
+    "dias_trabajados":5,
+    "vales_despensa": 0
+}
+
+
+###
+GET  http://localhost:8000/api/NominaPracticantesResidentes/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "estatus": "inicial"
+}
+
+
+###
+GET http://localhost:8000/api/NominaPracticantesResidentes/?semana=50&año=2024 HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+###
+PATCH  http://localhost:8000/api/Nomina/15/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "estatus": "inicial",
+    "monto_aprobado_nomina" : "13042.22"
+}
+
+
+###
+PATCH  http://localhost:8000/api/NominaPracticantesResidentes/4/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "estatus": "inicial",
+    "monto_aprobado" : "13042.22"
+}
+
+###
+GET http://localhost:8000/api/proveedores/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+requisicion
+
+###
+GET http://localhost:8000/api/ordenes/533/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+POST http://localhost:8000/api/ordenes/597/crear_cuenta_por_pagar/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+###
+GET http://localhost:8000/api/CuentaPorPagarProveedor/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+###
+GET http://localhost:8000/api/CuentaPorPagarProveedor/totales/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+PATCH http://localhost:8000/api/CuentaPorPagarProveedor/3/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "propuesta_pago": "0.000000",
+    "estatus": "inicial"
+
+}
+
+####
+POST  http://localhost:8000/api/CuentaPorPagarProveedor/4/agregar-pago/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "cantidad_abono": "50.00",
+    "tipo_de_pago": "transferencia",
+    "fecha_pago": "2024-06-16",
+    "referencia_transferencia": "12345XYZ"
+}
+
+
+###
+GET http://localhost:8000/api/ordenes/596/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+
+###
+POST http://localhost:8000/api/login/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "username": "OmarAdmin",
+    "password": "$LEScollines90"
+}
+
+### Login Request
+POST http://192.168.100.254/api/login/
+Content-Type: application/json
+
+{
+    "username": "OmarAdmin",
+    "password": "$LEScollines90"
+}
+
+### Obtener Ordenes
+GET http://192.168.100.254/api/ordenes/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+####Obtener pieza asignadas a una placa mediante su ID
+GET http://192.168.100.254/api/produccion/placas/93/obtener_piezas_asignadas_a_placa/' HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+
+
+### obtener datos de determina pieza por el id
+GET http://192.168.100.254//api/produccion/piezas/619/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+GET http://192.168.100.254/api/produccion/piezas/piezas_pendientes/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### 
+POST http://192.168.100.254/api/produccion/piezas/491/agregar_procesos_a_pieza/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+
+###mypassword
+
+GET  http://localhost:8000/api/ordenes/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+GET http://localhost:8000/api/ordenes/?limit=10 HTTP/1,1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+    {
+    }
+
+### lista de piezas
+GET http://localhost:8000/api/produccion/piezas/491 HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+
+### lista de piezas en base al numero de la placa
+GET http://localhost:8000/api/produccion/piezas/?placa_id=90 HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+
+### Procesos
+POST http://192.168.100.254/api/produccion/procesos/actualizar_estado_por_placa/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "placa_id": 125, 
+    "nombre": "CNC",
+    "estado": "pendiente"
+}
+
+### Obtener Cuentas por Cobrar
+GET http://localhost:8000/api/CuentasXcobrar/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener Cuentas por Cobrar
+GET http://localhost:8000/api/detalleCxc/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### update de cuentas por cobrar 
+PUT http://localhost:8000/api/CuentasXcobrar/101/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "razon_social": "Empresa XYZ",
+    "responsable": "Maria Lopez",
+    "oc_po": "OC654321",
+    "fecha_oc_po": "2024-08-26",
+    "numero_proyecto_interno_ri": "RI2024-002",
+    "importe_total_oc_po_sin_iva": "60000.00",
+    "importe_iva_total_oc_po": "9600.00",
+    "porcentaje_facturacion": "60.00",
+    "importe_total_facturado": "36000.00",
+    "iva_importe_facturado": "5760.00",
+    "importe_total_facturado_con_iva": "41760.00",
+    "fecha_cfdi": "2024-08-26",
+    "tipo_cfdi": "Ingreso",
+    "folio_cfdi": "CFDI654322",
+    "fecha_ideal_pago": "2024-09-26",
+    "fecha_programada_pago": "2024-09-26",
+    "saldo": "41760.00",
+    "divisa": "MXN",
+    "dias_vencidos": 0,
+    "importe_pago": "0.00",
+    "fecha_pago_realizado": null,
+    "estatus": "pendiente"
+}
+
+
+### Ingresar una CxC
+POST  http://localhost:8000/api/CuentasXcobrar/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "razon_social": "Cliente 1",
+    "responsable": "Behh",
+    "oc_po": "OC67890",
+    "fecha_oc_po": "2024-08-15",
+    "numero_proyecto_interno_ri": "PROY-7890",
+    "importe_total_oc_po_sin_iva": "20100.00",
+    "porcentaje_facturacion": "100.00",
+    "fecha_cfdi": "2024-08-20",
+    "tipo_cfdi": "Ingreso",
+    "folio_cfdi": "F67890",
+    "fecha_ideal_pago": "2024-09-15",
+    "fecha_programada_pago": "2024-09-10",  
+    "importe_pago": "100.00",
+    "divisa": "MXN",
+    "fecha_pago_realizado": null,
+    "estatus": "programada"
+}
+
+### Ingresar una CxC
+PATCH http://localhost:8000/api/CuentasXcobrar/97/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "fecha_ideal_pago": "2024-09-16",
+    "importe_pago": "880.00",
+    "estatus": "programada"
+
+}
+
+### Mostrar Servicios Facturador
+GET http://localhost:8000/api/ServiciosFactura/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Crear Servicio de factura 
+POST http://localhost:8000/api/ServiciosFactura/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "nombre_servicio": "Servicio de Ejemplo",
+    "folio_servicio": "3",
+    "total_a_pagar": "500.00",
+    "divisa": "USD",
+    "fecha_vencimiento": "2024-12-31",
+    "periodicidad": "mensual",
+    "estatus": "pendiente"
+}
+
+### Editar
+PUT http://localhost:8000/api/ServiciosFactura/3/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "nombre_servicio": "Servicio Modificado",
+    "folio_servicio": "FOL12asd3",
+    "total_a_pagar": "6000.00",
+    "divisa": "USD",
+    "fecha_vencimiento": "2025-01-31",
+    "periodicidad": "Anual",
+    "estatus": "programado"
+}
+
+### Eliminar
+DELETE http://localhost:8000/api/ServiciosFactura/3/
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###Cambiar de status
+POST http://localhost:8000/api/ServiciosFactura/4/cambiar_estatus/
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "estatus": "programado"
+}
+
+### Cambiar parcialmente
+PATCH http://localhost:8000/api/ServiciosFactura/44/
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "propuesta_pago": 20.10
+}
+
+### Agregar abono
+POST http://localhost:8000/api/PropuestaFactura/
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "servicio": 44,
+    "abono": 0,
+    "fecha_abono": "2019-08-24",
+    "referencia": "string",
+    "referencia": "null"
+}
+
+
+### Obtener detalle de un servicio
+GET http://localhost:8000//api/PropuestaFactura/?servicio=67
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener detalle de un servicio
+GET http://localhost:8000/api//pagos/
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener saldos totaltes por divisa
+GET http://localhost:8000/api/ServiciosFactura/saldo-total/
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+
+### Modificar saldos de pagos pendientes.
+POST http://localhost:8000/api/PagoPorPeriodo/13/modificar-saldo/
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "monto": 500.0
+}
+
+### Obtener datos
+GET http://localhost:8000/api/CreditosPrestamos/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Alta
+POST http://localhost:8000/api/CreditosPrestamos/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "emisor": "Empresa XYZ",
+    "receptor": "Persona ABC",
+    "tipo_transaccion": "prestamo",
+    "importe": "10000.00",
+    "numero_transaccion": "8",
+    "tasa_interes_normal": "5.00",
+    "tasa_interes_moratorio": "10.00",
+    "fecha_realizacion": "2024-09-06",
+    "fecha_vencimiento": "2025-09-06",
+    "divisa": "MXN",
+    "periodicidad": "mensual",
+    "emitido_recibido": "emitido",
+    "estatus": "pendiente"
+}
+
+### Editar
+PUT http://localhost:8000/api/CreditosPrestamos/3/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "emisor": "Empresa Modificada",
+    "receptor": "Persona Modificada",
+    "tipo_transaccion": "credito",
+    "importe": "15000.00",
+    "numero_transaccion": "12345XYZ",
+    "tasa_interes_normal": "4.00",
+    "tasa_interes_moratorio": "8.00",
+    "fecha_realizacion": "2024-09-06",
+    "fecha_vencimiento": "2026-09-06",
+    "divisa": "USD",
+    "periodicidad": "anual",
+    "emitido_recibido": "recibido",
+    "estatus": "programado"
+}
+
+### Delete
+DELETE http://localhost:8000/api/CreditosPrestamos/4/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Estatus
+POST http://localhost:8000/api/CreditosPrestamos/5/cambiar_estatus/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "estatus": "programado"
+}
+
+### Edit
+PATCH http://localhost:8000/api/CreditosPrestamos/5/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "divisa": "USD"
+}
+
+### Añadir abono
+POST http://localhost:8000/api/PagoCreditosPrestamos/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "credito_prestamo": 5,
+    "abono": 2000.00,
+    "fecha_pago": "2024-09-10",
+    "referencia_transferencia": "ABC12345",
+    "pdf": null
+}
+
+
+### Crear Cuenta Bancaria
+POST http://localhost:8000/api/CuentaBancaria/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "numero_cuenta": "1234567890",
+    "clave_interbancaria": "012345678912345678",
+    "banco": "Banco Ejemplo",
+    "servicio_id":44
+}
+
+### Obtener Todas las Cuentas Bancarias
+GET http://localhost:8000/api/CuentaBancaria/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Editar Cuenta Bancaria
+PUT http://localhost:8000/api/CuentaBancaria/1/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "numero_cuenta": "9876543210",
+    "clave_interbancaria": "876543219876543210",
+    "banco": "Banco Editado"
+}
+
+### Eliminar Cuenta Bancaria
+DELETE http://localhost:8000/api/CuentaBancaria/1/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener Cuentas Bancarias por Servicio
+GET http://localhost:8000/api/CuentaBancaria/44/servicio/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener todos los tipos de gastos
+GET http://localhost:8000/api/TipoOtroGasto/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener un tipo de gasto por ID
+GET http://localhost:8000/api/TipoOtroGasto/1/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Crear un nuevo tipo de gasto
+POST http://localhost:8000/api/TipoOtroGasto/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "nombre": "Transporte"
+}
+
+### Actualizar un tipo de gasto existente
+PUT http://localhost:8000/api/TipoOtroGasto/1/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "nombre": "Alimentos"
+}
+
+### Modificación parcial de un tipo de gasto
+PATCH http://localhost:8000/api/TipoOtroGasto/1/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "nombre": "Hospedaje"
+}
+
+### Eliminar un tipo de gasto
+DELETE http://localhost:8000/api/TipoOtroGasto/1/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+
+
+### Obtener todos los gastos
+GET http://localhost:8000/api/OtroGasto/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener un gasto por ID
+GET http://localhost:8000/api/OtroGasto/1/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Crear un nuevo gasto
+POST http://localhost:8000/api/OtroGasto/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "descripcion": "beh",
+    "tipo_gasto": 5,
+    "monto_total": "2000.00",
+    "divisa": "MXN",
+    "estatus": "pendiente",
+    "ticket_factura": null,
+    "fecha_aprobacion": "2024-09-26",
+    "fecha_pago": "2024-09-26",
+    "saldo": 2000.0,
+    "fecha_gasto": "2024-09-26"
+}
+
+### Actualizar un gasto existente
+PUT http://localhost:8000/api/OtroGasto/23/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "fecha_aprobacion": "2023-09-20",
+    "estatus": "programado"
+}
+
+### Modificación parcial de un gasto
+PATCH http://localhost:8000/api/OtroGasto/14/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "monto_total": 5000.00
+}
+
+### Eliminar un gasto
+DELETE http://localhost:8000/api/OtroGasto/14/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Cambiar el estatus de un gasto
+POST http://localhost:8000/api/OtroGasto/14/cambiar_estatus/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "estatus": "pagado"
+}
+
+
+
+
+### Obtener todos los pagos de otros gastos
+GET http://localhost:8000/api/PagoOtroGasto/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener un pago por ID
+GET http://localhost:8000/api/PagoOtroGasto/6/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Crear un nuevo pago
+POST http://localhost:8000/api/PagoOtroGasto/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "otro_gasto": 22,
+    "abono": 1.00,
+    "fecha_abono": "2023-09-20",
+    "referencia_transferencia": "12345ABC",
+    "pdf": null
+}
+
+### Actualizar un pago existente
+PUT http://localhost:8000/api/PagoOtroGasto/2/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "otro_gasto": 12,
+    "abono": 1500.00,
+    "fecha_abono": "2023-09-22",
+    "referencia_transferencia": "12345XYZ",
+    "pdf": null
+}
+
+
+### Eliminar un pago
+DELETE http://localhost:8000/api/PagoOtroGasto/3/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+GET http://localhost:8000/api/PagoOtroGasto/?otro_gasto=15 HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+CreditosPrestamos
+
+
+###
+GET http://localhost:8000/api/CreditosPrestamos/totales_por_tipo_y_divisa HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+POST http://localhost:8000/api/PagoCreditosPrestamos/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "amortizacion_cuota": 6358,
+    "abono": "1.00",
+    "fecha_pago": "2023-09-20",
+    "referencia_transferencia": "12345ABC",
+    "pdf": null
+}
+
+###
+GET http://localhost:8000//api/PagoCreditosPrestamos/?credito_prestamo=90 HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+
+### Obtener todos los registros de ISR (GET)
+GET http://localhost:8000/api/Isr/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+### Crear un nuevo registro de ISR (POST)
+POST http://localhost:8000/api/Isr/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "limite_inferior": 5000.00,
+    "limite_superior": 10000.00,
+    "cuota_fija": 300.00,
+    "porcentaje_excedente": 1.5
+}
+
+
+### Obtener un registro específico de ISR por ID (GET)
+GET http://localhost:8000/api/Isr/1/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+### Actualizar un registro específico de ISR (PUT)
+PUT http://localhost:8000/api/Isr/1/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "limite_inferior": 5500.00,
+    "limite_superior": 10500.00,
+    "cuota_fija": 320.00,
+    "porcentaje_excedente": 1.7
+}
+
+
+### Modificar parcialmente un registro específico de ISR (PATCH)
+PATCH http://localhost:8000/api/Isr/1/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "cuota_fija": 350.00
+}
+
+
+### Eliminar un registro específico de ISR (DELETE)
+DELETE http://localhost:8000/api/Isr/1/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+POST http://localhost:8000/api/PagoPorPeriodo/14/cambiar-estado/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "estatus": "programado"
+}
+
+
+###
+PATCH http://localhost:8000/api/Amortizacion/7131/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "propuesta_pago": 450.00,
+    "estatus_pago": "pendiente"
+}
+
+###
+GET http://localhost:8000/api/rh/puesto/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+GET http://localhost:8000/api/TarjetaCredito/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+### Ingresar una cuenta de Banco
+POST  http://localhost:8000/api/BancoModelo/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "banco": "BBVA",
+    "numero_cuenta": "1234567890123456789",
+    "numero_tarjeta": "9876543210987654321",
+    "fecha_vencimiento": "2024-12-31",
+    "estatus": "activa",
+    "saldo": 10000.00,
+    "divisa": "MXN",
+    "comentarios": "Cuenta principal",
+    "cliente": "Juan Pérez",
+    "cuenta_ejecutivo": "Laura Rodríguez",
+    "telefono_ejecutivo": "5551234567",
+    "pdf_comprobante": null
+}
+
+### Ingresar un abonoBanco
+POST  http://localhost:8000/api/AbonoBanco/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "numero_cuenta": 1,
+    "monto_movimiento": 2000.00,
+    "tipo_movimiento": "ingreso",
+    "fecha_movimiento": "2024-12-05",
+    "referencia": "REF001",
+    "comentarios": "Pago mensual",
+    "cliente": "Juan Pérez",
+    "pdf_comprobante": null
+}
+
+### Obtener movimientos por Id
+GET http://localhost:8000/api/MovimientoBanco/por-banco/1/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener id de cuenta bancaria
+POST  http://localhost:8000/api/BancoModelo/buscar-cuenta/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+{
+    "numero_tarjeta": "9876543210987654321",
+}
+
+###
+POST http://localhost:8000/api/usuarios/
+Authorization: Token de3a4869da71e7cb1d642967611fa94d2741016c
+Content-Type: application/json
+
+{
+"username": "erikfinanzas",
+"nombre": "erikfinanzas",
+"telefono": "6862396071",
+"correo": "erikfinanzas@outlook.com",
+"rol": "MASTER",
+"password": "qwer"
+}
+
+### Obtener saldos de registros en servicios factura por divisa.
+GET http://localhost:8000/api/ServiciosFactura/saldo-total-sl/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+
+### Obtener saldos de registros en tarjeta de credito por divisa.
+GET http://localhost:8000/api/TarjetaCredito/saldo-total-sl/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener saldos de registros en otro gasto por divisa.
+GET http://localhost:8000/api/OtroGasto/saldo-total-sl/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener Cuentas por Cobrar
+GET http://localhost:8000/api/CuentasXcobrar/saldo-total-sl/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener Cuentas por Cobrar
+GET http://localhost:8000/api/CuentasXcobrar/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+### Obtener Cuentas por Cobrar
+GET http://localhost:8000/api/Amortizacion/ HTTP/1.1
+Content-Type: application/json
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+
+###
+GET http://localhost:8000/api/rh/empleados/1 HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+GET http://localhost:8000/api/Nomina/?semana=49&año=2024 HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+GET http://localhost:8000/api/Nomina/totales-semana-actual HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+GET http://localhost:8000/api/Nomina/semana-actual HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/
+
+###
+PATCH http://localhost:8000/api/Nomina/2/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    
+    "dias_trabajados":5,
+    "vales_despensa": 0
+}
+
+
+###
+GET  http://localhost:8000/api/NominaPracticantesResidentes/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "estatus": "inicial"
+}
+
+
+###
+GET http://localhost:8000/api/NominaPracticantesResidentes/?semana=50&año=2024 HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+###
+PATCH  http://localhost:8000/api/Nomina/15/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "estatus": "inicial",
+    "monto_aprobado_nomina" : "13042.22"
+}
+
+
+###
+PATCH  http://localhost:8000/api/NominaPracticantesResidentes/4/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "estatus": "inicial",
+    "monto_aprobado" : "13042.22"
+}
+
+###
+GET http://localhost:8000/api/proveedores/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+requisicion
+
+###
+GET http://localhost:8000/api/ordenes/533/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+POST http://localhost:8000/api/ordenes/597/crear_cuenta_por_pagar/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+###
+GET http://localhost:8000/api/CuentaPorPagarProveedor/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+###
+GET http://localhost:8000/api/CuentaPorPagarProveedor/totales/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+PATCH http://localhost:8000/api/CuentaPorPagarProveedor/3/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "propuesta_pago": "0.000000",
+    "estatus": "inicial"
+
+}
+
+####
+POST  http://localhost:8000/api/CuentaPorPagarProveedor/4/agregar-pago/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "cantidad_abono": "50.00",
+    "tipo_de_pago": "transferencia",
+    "fecha_pago": "2024-06-16",
+    "referencia_transferencia": "12345XYZ"
+}
+
+
+###
+GET http://localhost:8000/api/ordenes/596/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+
+###
+POST http://localhost:8000/api/login/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "username": "OmarAdmin",
+    "password": "$LEScollines90"
+}
+
+###
+POST http://localhost:8000/api/login/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "username": "string",
+    "password": "string"
+}
+
+###
+POST  http://192.168.100.254/RNTV/api/usuarios/
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "nombre": "admin",
+    "telefono": "1234567890",
+    "correo": "admin@example.com",
+    "rol": "MASTER",
+    "password": "admin"
+}
+
+###
+get  http://192.168.100.254/RNTV/api/usuarios/1
+Content-Type: application/json
+
+###
+post http://localhost:8000/api/OtroGasto/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+  "proveedor": "test",
+  "descripcion": "test",
+  "tipo_gasto": 1,
+  "monto_total": 2001.0,
+  "divisa": "USD",
+  "tipo_pago": "transferencia",
+  "numero_cuenta": "1111-1111-1111-1111",
+  "fecha_gasto": "2024-12-27",
+  "estatus": "pendiente"
+}
+
+###
+get http://localhost:8000/api/rh/PracticantesResidentes/4/descargar-documentos/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+###
+get http://localhost:8000/api/CuentaPorPagarProveedor/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+PATCH  http://localhost:8000/api/rh/empleados/33/cambiar-estatus/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "estatus": "proceso_finiquito"
+}
+
+
+###
+POST  http://localhost:8000/api/AbonoTarjeta/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "pago_mensual": 105,
+    "monto_abono": 10000,
+    "fecha_abono": "2025-01-08",
+    "referencia_transferencia": "test",
+    "tipo_de_pago": "transferencia",
+    "numero_cuenta": 4
+}
+
+
+###
+POST  http://192.168.100.254/RNTV/api/login/
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+###
+POST  http://localhost:8000/api/produccion/materiales/espesores_para_nesteo_filtrado/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+  "material": "Baquelita"
+}
+
+### 
+GET http://localhost:8000/api/ordenes/?estado=EN%20ALMACEN&anio=2025
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+
+### 
+POST http://localhost:8000/api/produccion/proveedores-tratamiento/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "nombre": "1",
+    "descripcion": "1",
+    "correo": "1@test.com",
+    "telefono": "1"
+}
+
+### 
+POST http://localhost:8000/api/produccion/estantes-qa/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "nombre": "test",
+    "descripcion": "test",
+    "id_rack": 1
+}
+
+###
+GET http://localhost:8000/api/produccion/piezas-estante/pieza/597
+
+###
+GET  http://localhost:8000/api/produccion/espesores/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+post http://localhost:8000/api/produccion/espesores/clear-cache/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+POST  http://localhost:8000/api/produccion/espesores/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "medida": "1445555555",
+    "unidad": "cache 5"
+}
+
+###
+DELETE http://localhost:8000/api/produccion/espesores/4/ HTTP/1.1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+GET  http://localhost:8000/api/produccion/espesores/unidades/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+GET  http://localhost:8000/api/produccion/materiales/?espesor=3
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+GET  http://localhost:8000/api/produccion/materiales/por-medida/?medida=t
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+POST  http://localhost:8000/api/produccion/piezas/buscar-por-codigo-orden/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+"codigo_orden": "0000 - 0001"
+}
+
+###
+POST http://localhost:8000/api/produccion/piezas/procesos-por-pieza/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "pieza_id": 1 
+}
+
+###
+GET  http://localhost:8000/api/produccion/ubicacion-piezas
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+###
+Post http://localhost:8000/api/produccion/ordenes-produccion/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "codigo_orden": "0000 - 0004",
+    "estado": "Activo"
+}
+
+###
+get http://localhost:8000/api/produccion/tratamiento-calidad/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+get http://localhost:8000/api/produccion/asignacion-tratamientos-calidad/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+POST http://localhost:8000/api/produccion/asignaciones-procesos/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "proceso": 3,
+    "pieza": 217,
+    "usuario": 13,
+    "estado": "Pendiente",
+    "piezas_asignadas": 10,
+    "piezas_liberadas": 0,
+    "piezas_scrap": 0,
+    "tiempo_realizacion_min": 60,
+    "fecha_inicio": "2025-04-18T10:00:00" ,
+    "fecha_finalizacion_estimada": "2025-04-18T11:00:00",
+    "prioridad": 5
+}
+###
+post http://localhost:8000/api/produccion/estantes-produccion/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "codigo_estante": "E12",
+    "rack": 2,
+    "estado": "Disponible"
+}
+
+###
+patch http://localhost:8000/api/produccion/piezas/1/actualizar-material-presentacion/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "material_id": 1,
+    "presentacion_id": 1
+}
+
+###
+get http://localhost:8000/api/produccion/piezas/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+patch http://localhost:8000/api/produccion/piezas/19/actualizar-material-presentacion/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "material_id": 10,
+    "presentacion_id": 12
+}
+
+###
+get http://localhost:8000/api/produccion/piezas/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+post http://localhost:8000/api/produccion/pieza-nesteo/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "pieza": 19,
+    "nesteo": 9,
+    "cantidad": 10,
+    "estado": "Pendiente"
+}
+
+###
+get http://localhost:8000/api/usuarios/obtener-usuarios-simple/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+get http://localhost:8000/api/produccion/personal-maquina/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+get http://localhost:8000/api/produccion/procesos/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+get http://localhost:8000/api/produccion/maquina-proceso/obtener-maquinas-por-proceso/8
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+get http://localhost:8000/api/produccion/personal-maquina/obtener-personal-por-maquinas/1
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+post http://localhost:8000/api/produccion/asignaciones-procesos/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "proceso": 6,
+    "pieza": 19,
+    "maquina": 9,
+    "usuario": 23,
+    "piezas_asignadas": 10,
+    "tiempo_realizacion_min": 60,
+    "estado": "Pendiente"
+}
+
+###
+GET http://localhost:8000/api/produccion/asignaciones-procesos/procesos-asignados?area=Sheet%20Metal,CNC
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+GET http://localhost:8000/api/produccion/asignaciones-procesos/procesos-asignados?filtro_fecha=futuras
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+PATCH http://localhost:8000/api/produccion/asignaciones-procesos/8/cambiar-estado/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{"nuevo_estado": "En Curso"}
+
+###
+GET http://localhost:8000/api/produccion/asignaciones-procesos/8
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+###
+PATCH http://localhost:8000/api/produccion/asignaciones-procesos/8/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+Content-Type: application/json
+
+{
+    "estado": "Finalizado",
+    "piezas_liberadas": 10,
+    "piezas_scrap": 10,
+    "fecha_finalizacion_real": "2025-04-23T12:00:00"
+}
+
+###
+PATCH http://localhost:8000/api/produccion/piezas/59/limpiar-material-presentacion/
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b
+
+
+###
+GET http://localhost:8000/api/produccion/piezas/22
+Authorization: Token 84993c9fff91c584e0a79f5e282a67ad7e175d8b

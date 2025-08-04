@@ -1,0 +1,23 @@
+# Usa una imagen base de Python
+FROM python:3.9
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Copia el archivo de requerimientos y el código fuente
+COPY requirements.txt /app/
+
+# Instala las dependencias
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia el código fuente
+COPY . /app/
+
+# Instala cobertura y debugpy
+RUN pip install coverage debugpy
+
+# Expone el puerto para la depuración y el puerto de la aplicación Django
+EXPOSE 8000 5678
+
+# Comando de inicio para el contenedor
+CMD ["sh", "-c", "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
