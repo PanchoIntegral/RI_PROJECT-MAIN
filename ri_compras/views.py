@@ -2873,10 +2873,17 @@ class NominaViewSet(viewsets.ModelViewSet):
             fecha_nomina__week=current_week
         )
 
-        # Calcula los totales
-        total_nomina_a_depositar = queryset.aggregate(total=Sum('nomina_a_depositar'))['total'] or 0
-        total_impuestos = queryset.aggregate(total=Sum('total_impuestos'))['total'] or 0
-        total_aprobado = queryset.aggregate(total=Sum('monto_aprobado_nomina'))['total'] or 0
+        #  Calcula todos los totales en UNA SOLA consulta a la base de datos
+        totales = queryset.aggregate(
+            total_depositar=Sum('nomina_a_depositar'),
+            total_imp=Sum('total_impuestos'),
+            total_aprob=Sum('monto_aprobado_nomina')
+        )
+
+        # Asigna los valores desde el diccionario de totales
+        total_nomina_a_depositar = totales.get('total_depositar') or 0
+        total_impuestos = totales.get('total_imp') or 0
+        total_aprobado = totales.get('total_aprob') or 0
 
         # Retorna los resultados
         return Response({
@@ -2976,13 +2983,13 @@ class NominaResidentesPracticantesViewSet(viewsets.ModelViewSet):
         queryset = NominaResidentesPracticantes.objects.all().order_by('-fecha_nomina')
 
         # Recalcular campos para cada objeto en el queryset
-        for nomina in queryset:
-            nomina.apoyo_economico = nomina.calcular_apoyo_economico()
-            nomina.semana_nomina = nomina.calcular_semana_nomina()
-            nomina.save(update_fields=[
-                'apoyo_economico',
-                'semana_nomina',
-            ])
+        # for nomina in queryset:
+        #     nomina.apoyo_economico = nomina.calcular_apoyo_economico()
+        #     nomina.semana_nomina = nomina.calcular_semana_nomina()
+        #     nomina.save(update_fields=[
+        #         'apoyo_economico',
+        #         'semana_nomina',
+        #     ])
 
         # Aplicar filtros por parámetros de consulta
         semana = self.request.query_params.get('semana', None)
@@ -3023,10 +3030,17 @@ class NominaResidentesPracticantesViewSet(viewsets.ModelViewSet):
             semana_nomina=current_week
         )
 
-        # Calcula los totales
-        total_monto_aprobado = queryset.aggregate(total=Sum('monto_aprobado'))['total'] or 0
-        total_apoyo_economico = queryset.aggregate(total=Sum('apoyo_economico'))['total'] or 0
+        # Calcula ambos totales en una sola consulta a la base de datos
+        totales = queryset.aggregate(
+            total_aprobado=Sum('monto_aprobado'),
+            total_apoyo=Sum('apoyo_economico')
+        )
 
+        # Asigna los valores desde el diccionario de totales
+        total_monto_aprobado = totales.get('total_aprobado') or 0
+        total_apoyo_economico = totales.get('total_apoyo') or 0
+
+        # Retorna los resultados
         return Response({
             'year': current_year,
             'week': current_week,
